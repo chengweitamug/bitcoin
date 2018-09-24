@@ -11,6 +11,7 @@ if [ -z ${LIBTOOLIZE} ] && GLIBTOOLIZE="`which glibtoolize 2>/dev/null`"; then
   LIBTOOLIZE="${GLIBTOOLIZE}"
   export LIBTOOLIZE
 fi
+
 which autoreconf >/dev/null || \
-  (echo "configuration failed, please install autoconf first" && exit 1)
+  (echo "configuration failed, please install autoconf first" && exit 2)
 autoreconf --install --force --warnings=all
